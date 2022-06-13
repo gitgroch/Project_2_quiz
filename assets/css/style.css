@@ -159,6 +159,10 @@ p {
 
 /* === 3.1 Home Page Styles  === */
 
+.home-body{
+   background: url('../media/bg_scifi_img.webp') no-repeat center center;
+   background-size: cover;
+}
 
 .container {
     width: 100vw;
@@ -169,6 +173,21 @@ p {
     align-items: center;
     max-width: 80vw;
     margin: 0 auto;
+}
+
+.card {
+    background-color: rgba(40, 75, 99, 0.75);
+    padding: 1.5rem;
+    border-radius: 50px;
+}
+
+.home-heading {
+    text-align: center;
+}
+
+.home-text {
+    margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 .flex-column {
@@ -215,12 +234,16 @@ p {
     display: flex;
     position: relative;
     justify-content: center;
+    align-items: center;
     margin-bottom: 1.5rem;
-
+    max-width: 64rem;
+    margin: 0 auto;
 }
 
 .img-box img {
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
 }
 
 /*  =============
@@ -228,25 +251,6 @@ p {
     ============= */
 
 /* === 4.1 Buttons === */
-
-/* .btn {
-        font-size: 1rem;
-        font-family: var(--ff-sec);
-        padding: 1rem;
-        max-width: 30rem;
-        text-align: center;
-        margin: 1rem;
-        text-decoration: none;
-        color: var(--clr-sec);
-        background-color: var(--background-sec);
-        border-radius: 5px; 
-    }
-
-    .btn:hover {
-        cursor: pointer;
-        background-color: var(--background-ter);
-    } */
-
 /* button styling without display flex so that it hides properly from JS sript */
 .btn {
     background-color: var(--background-sec);
@@ -292,8 +296,6 @@ p {
     left: 2px;
 }
 
-
-
 .start-page {
     width: 100vw;
     display: flex;
@@ -313,7 +315,6 @@ p {
     justify-content: center;
     align-items: center;
 }
-
 
 .choice-btn {
     background-color: var(--background-sec);
@@ -360,12 +361,19 @@ p {
     left: 2px;
 }
 
+.ctrl-buttons {
+    display: flex;
+    justify-content: center;
+}
+
 /* score area */
 #score-area {
     display: flex;
-    gap: 5em;
-
+    justify-content: space-between;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
+    
 
 .score-area-prefix {
     text-align: center;

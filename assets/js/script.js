@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", function(){});
 
 // Global Variables
 // Variables from DOM
-const startButton = document.getElementById('start-btn');
+const endButton = document.getElementById('end-btn')
+const restartButton = document.getElementById('restart-btn')
 const nextButton = document.getElementById('next-btn');
 const questionContainer = document.getElementById('question-container');
 const questionElement = document.getElementById('question')
@@ -82,8 +83,9 @@ const questions = [
 ]
 
 // Event Listeners 
-
-startButton.addEventListener('click', startQuiz);
+document.addEventListener("DOMContentLoaded", startQuiz);
+// startButton.addEventListener('click', startQuiz);
+restartButton.addEventListener('click', startQuiz);
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setQuestion()
@@ -95,8 +97,8 @@ nextButton.addEventListener('click', () => {
  */
 function startQuiz(){
     // hides start button and shows question 
-    startButton.classList.add('hide');
-    welcomeNote.classList.add('hide');
+    endButton.classList.add('hide');
+    restartButton.classList.add('hide')
     questionContainer.classList.remove('hide');
     currentScore.innerText = 0
     questionCounter = 0;
@@ -164,9 +166,8 @@ function selectAnswer  (e) {
     if (randomQuestion.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide')
     } else {
-        startButton.innerText = 'Restart Quiz'
-        startButton.classList.remove('hide')
-        startButton.classList.add('restart-btn')
+        endButton.classList.remove('hide')
+        restartButton.classList.remove('hide')
         correctAnswers = 0
     }
     }
