@@ -177,8 +177,9 @@ p {
 
 .card {
     background-color: rgba(40, 75, 99, 0.75);
-    padding: 1.5rem;
+    padding: 2rem;
     border-radius: 50px;
+    height: 100vh;
 }
 
 .home-heading {
@@ -422,11 +423,11 @@ p {
 @media all and (min-width: 768px) {
 
     h1 {
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
 
     #question {
-        font-size: 2.75rem;
+        font-size: 2rem;
     }
 
     .img-box {
@@ -438,5 +439,6 @@ p {
         gap: 30em;
     
     }
+
 
 }

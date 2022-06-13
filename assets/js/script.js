@@ -85,7 +85,7 @@ const questions = [
 // Event Listeners 
 document.addEventListener("DOMContentLoaded", startQuiz);
 // startButton.addEventListener('click', startQuiz);
-restartButton.addEventListener('click', startQuiz);
+// restartButton.addEventListener('click', startQuiz);
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setQuestion()
@@ -97,8 +97,8 @@ nextButton.addEventListener('click', () => {
  */
 function startQuiz(){
     // hides start button and shows question 
-    endButton.classList.add('hide');
-    restartButton.classList.add('hide')
+    // endButton.classList.add('hide');
+    // restartButton.classList.add('hide')
     questionContainer.classList.remove('hide');
     currentScore.innerText = 0
     questionCounter = 0;
@@ -166,8 +166,7 @@ function selectAnswer  (e) {
     if (randomQuestion.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide')
     } else {
-        endButton.classList.remove('hide')
-        restartButton.classList.remove('hide')
+        return window.location.assign('/end.html')
         correctAnswers = 0
     }
     }
