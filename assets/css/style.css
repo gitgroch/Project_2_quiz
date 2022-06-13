@@ -132,7 +132,7 @@ h2
 
 /* clamp sets responsive font size (Min value, preferred value, max value */
 
-h1,
+h1
 {
     font-size: clamp(1rem, 1rem + 10vw, 4rem);
 }
@@ -148,11 +148,10 @@ p {
 }
 
 #question {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-family: var(--ff-prim);
     color: Var(--clr-prim);
-    text-align: center;
-}
+    
 }
 
 /*  =============
@@ -191,6 +190,7 @@ body {
 
 #question {
     margin-bottom: 2rem;
+    margin-top: 2.5rem;
 }
 
 .choice-num { 
@@ -215,7 +215,7 @@ body {
     /* === 4.1 Buttons === */
 
     .btn {
-        font-size: 2rem;
+        font-size: 1rem;
         font-family: var(--ff-sec);
         padding: 1rem;
         max-width: 30rem;
@@ -322,5 +322,5 @@ h1 {
 
 #question {
     font-size: 4rem;
-
+}
 }
