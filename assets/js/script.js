@@ -13,9 +13,14 @@ const choiceText = document.getElementById('choice-text')
 const welcomeNote = document.getElementById('welcome')
 const questionImage = document.getElementById('image-box')
 const currentScore = document.getElementById('score')
+const progressText = document.getElementById('progress-text')
 
-// set score to 0 at beginning of quiz
+// set score and question counter to 0 at beginning of quiz
 let correctAnswers = 0;
+let questionCounter = 0;
+
+// set maximum amount of questions 
+const MAX_QUESTIONS = 5;
 
 // undefined variables to hold question index and the value for random question
 let currentQuestionIndex;
@@ -92,7 +97,8 @@ function startQuiz(){
     startButton.classList.add('hide');
     welcomeNote.classList.add('hide');
     questionContainer.classList.remove('hide');
-    currentScore.innerText = '0'
+    currentScore.innerText = 0
+    questionCounter = 0;
     // randomises questions by sorting the elements of the question array and assigning them a random value 
     randomQuestion = questions.sort(() => Math.random() - .5);
     // sets current question index to 0 (start)
@@ -112,7 +118,9 @@ function startQuiz(){
     resetState()
     //  calls showQuestion function to display a random question (andomQuestion) from the question array (currentQuestionIndex)
     showQuestion(randomQuestion[currentQuestionIndex])
-
+    questionCounter++
+    console.log(questionCounter)
+    progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
 
 }
 
