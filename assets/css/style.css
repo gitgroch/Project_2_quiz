@@ -360,9 +360,30 @@ p {
     left: 2px;
 }
 
+/* score area */
 #score-area {
     display: flex;
+    justify-content: space-between;
 }
+
+.score-area-prefix {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.score-main-text {
+    text-align: center;
+}
+
+#progressBar {
+    width: 10rem;
+    height: 1.5rem;
+    border: 0.2rem solid var(--clr-prim) ;
+    margin-top: 2rem;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
 
 @media (min-width: 768px) {
     .choice-btn {
