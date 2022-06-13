@@ -3,6 +3,7 @@
 1. Global Styles
     1.1 CSS Reset 
     1.2 Variables
+2. Typography
 
 */
 
@@ -112,4 +113,29 @@ select {
     --fw-400: 500;
     --fw-700: 700;
     --fw-900: 900;
+}
+
+*  =============
+    2. typography 
+    ============= */
+h1,
+h2 {
+    font-family: var(--ff-prim);
+    color: Var(--clr-prim);
+}
+
+/* clamp sets responsive font size (Min value, preferred value, max value */
+
+h1 {
+    font-size: clamp(1rem, 1rem + 10vw, 4rem);
+}
+
+h2 {
+    font-size: clamp(.75rem, 1rem + 10vw, 3rem);
+}
+
+p {
+    font-family: var(--ff-sec);
+    font-size: clamp(.5rem, .5rem + 10vw, 1rem);
+    color: var(--clr-sec);
 }
