@@ -22,19 +22,22 @@
         </ul>
     </nav> -->
 </div>
-
 <body>
-
     <div class="container hide" id="question-container">
-        <div class="flex-column flex-center"></div>
         <div id="score-area">
             <div class="score-area-item">
-                <p>Question Number Display</p>
+                <p id="progress-text" class="score-area-prefix">Question #</p>
+                <div id="progressBar">
+                    <div id="progressBarFull"></div>
+                </div>
             </div>
             <div class="score-area-item">
-                <p>Score</p>
+                <p class="score-area-prefix">Score</p>
+                <div class="score-main-text" id="score">0</div>
             </div>
         </div>
+        <div class="flex-column flex-center"></div>
+  
         <div id="question">Here is a Question? </div>
         <div class="img-box" id="image-box"></div>
         <div id="answer" class="answer-container">

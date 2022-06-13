@@ -125,16 +125,14 @@ select {
     2. typography 
     ============= */
 h1,
-h2
-{
+h2 {
     font-family: var(--ff-prim);
     color: Var(--clr-prim);
 }
 
 /* clamp sets responsive font size (Min value, preferred value, max value */
 
-h1
-{
+h1 {
     font-size: clamp(1rem, 1rem + 10vw, 4rem);
 }
 
@@ -149,10 +147,10 @@ p {
 }
 
 #question {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: var(--ff-prim);
     color: Var(--clr-prim);
-    
+
 }
 
 /*  =============
@@ -162,7 +160,7 @@ p {
 /* === 3.1 Home Page Styles  === */
 
 
-.container { 
+.container {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -171,7 +169,6 @@ p {
     align-items: center;
     max-width: 80vw;
     margin: 0 auto;
-    padding: 2rem;
 }
 
 .flex-column {
@@ -187,12 +184,12 @@ p {
 /* === 3.2 Quiz Page Styles */
 
 #question {
-    margin-bottom: 2rem;
-    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
     text-align: center;
 }
 
-.choice-num { 
+.choice-num {
     padding: 1.5rem 2rem;
 }
 
@@ -225,13 +222,14 @@ p {
 .img-box img {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
+
 /*  =============
     4. Utilities 
     ============= */
 
-    /* === 4.1 Buttons === */
+/* === 4.1 Buttons === */
 
-    /* .btn {
+/* .btn {
         font-size: 1rem;
         font-family: var(--ff-sec);
         padding: 1rem;
@@ -250,125 +248,129 @@ p {
     } */
 
 /* button styling without display flex so that it hides properly from JS sript */
-    .btn  {
-        background-color: var(--background-sec);
-        border: 0 solid #E5E7EB;
-        box-sizing: border-box;
-        color: var(--clr-sec);
-        font-family: var(--ff-sec);
-        font-size: 1rem;
-        font-weight: 700;
-        justify-content: center;
-        line-height: 1.75rem;
-        padding: .2rem 2rem;
-        position: relative;
-        text-align: center;
-        text-decoration: none #000000 solid;
-        text-decoration-thickness: auto;
-        max-width: 100%;
-        position: relative;
-        cursor: pointer;
-        transform: rotate(-2deg);
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
-        margin-bottom: 1.5rem;
-      }
-      
-      .btn:focus {
-        outline: 0;
-      }
-      
-      .btn:after {
-        content: '';
-        position: absolute;
-        border: 1px solid #000000;
-        bottom: 4px;
-        left: 4px;
-        width: calc(100% - 1px);
-        height: calc(100% - 1px);
-      }
-      
-      .btn:hover:after {
-        bottom: 2px;
-        left: 2px;
-      }
+.btn {
+    background-color: var(--background-sec);
+    border: 0 solid #E5E7EB;
+    box-sizing: border-box;
+    color: var(--clr-sec);
+    font-family: var(--ff-sec);
+    font-size: 1rem;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 1.75rem;
+    padding: .2rem 2rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none #000000 solid;
+    text-decoration-thickness: auto;
+    max-width: 100%;
+    position: relative;
+    cursor: pointer;
+    transform: rotate(-2deg);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-bottom: 1.5rem;
+}
 
-    
+.btn:focus {
+    outline: 0;
+}
 
-    .start-page {
-        width: 100vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        max-width: 80vw;
-        margin: 0 auto;
-        padding: 2rem;
+.btn:after {
+    content: '';
+    position: absolute;
+    border: 1px solid #000000;
+    bottom: 4px;
+    left: 4px;
+    width: calc(100% - 1px);
+    height: calc(100% - 1px);
+}
 
-    }
+.btn:hover:after {
+    bottom: 2px;
+    left: 2px;
+}
 
-    .start-btn-container {
+
+
+.start-page {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 80vw;
+    margin: 0 auto;
+    padding: 2rem;
+
+}
+
+.start-btn-container {
     display: flex;
     position: relative;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    }
+}
 
 
-.choice-btn  {
-  background-color: var(--background-sec);
-  border: 0 solid #E5E7EB;
-  box-sizing: border-box;
-  color: var(--clr-sec);
-  display: flex;
-  font-family: var(--ff-sec);
-  font-size: 1rem;
-  font-weight: 700;
-  justify-content: center;
-  line-height: 1.75rem;
-  padding: .2rem 2rem;
-  position: relative;
-  text-align: center;
-  text-decoration: none #000000 solid;
-  text-decoration-thickness: auto;
-  width: 100%;
-  max-width: 460px;
-  position: relative;
-  cursor: pointer;
-  transform: rotate(-2deg);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+.choice-btn {
+    background-color: var(--background-sec);
+    border: 0 solid #E5E7EB;
+    box-sizing: border-box;
+    color: var(--clr-sec);
+    display: flex;
+    font-family: var(--ff-sec);
+    font-size: 1rem;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 1.75rem;
+    padding: .2rem 2rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none #000000 solid;
+    text-decoration-thickness: auto;
+    width: 100%;
+    max-width: 460px;
+    position: relative;
+    cursor: pointer;
+    transform: rotate(-2deg);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
 }
 
 .choice-btn:focus {
-  outline: 0;
+    outline: 0;
 }
 
 .choice-btn:after {
-  content: '';
-  position: absolute;
-  border: 1px solid #000000;
-  bottom: 4px;
-  left: 4px;
-  width: calc(100% - 1px);
-  height: calc(100% - 1px);
+    content: '';
+    position: absolute;
+    border: 1px solid #000000;
+    bottom: 4px;
+    left: 4px;
+    width: calc(100% - 1px);
+    height: calc(100% - 1px);
 }
 
 .choice-btn:hover:after {
-  bottom: 2px;
-  left: 2px;
+    bottom: 2px;
+    left: 2px;
+}
+
+#score-area {
+    display: flex;
 }
 
 @media (min-width: 768px) {
-  .choice-btn {
-    padding: .75rem 3rem;
-    font-size: 1.25rem;
-  }
+    .choice-btn {
+        padding: .75rem 3rem;
+        font-size: 1.25rem;
+    }
 }
-    
+
 .correct {
     background-color: green;
 }
@@ -379,16 +381,16 @@ p {
 
 @media all and (min-width: 768px) {
 
-h1 {
-    font-size: 4rem;
-}
+    h1 {
+        font-size: 4rem;
+    }
 
-#question {
-    font-size: 2.75rem;
-}
+    #question {
+        font-size: 2.75rem;
+    }
 
-.img-box {
-    height: 50%;
-}
+    .img-box {
+        height: 50%;
+    }
 
 }
