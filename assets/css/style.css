@@ -189,6 +189,7 @@ p {
 #question {
     margin-bottom: 2rem;
     margin-top: 2.5rem;
+    text-align: center;
 }
 
 .choice-num { 
@@ -221,6 +222,9 @@ p {
 
 }
 
+.img-box img {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
 /*  =============
     4. Utilities 
     ============= */
@@ -245,6 +249,7 @@ p {
         background-color: var(--background-ter);
     } */
 
+/* button styling without display flex so that it hides properly from JS sript */
     .btn  {
         background-color: var(--background-sec);
         border: 0 solid #E5E7EB;
@@ -260,8 +265,7 @@ p {
         text-align: center;
         text-decoration: none #000000 solid;
         text-decoration-thickness: auto;
-        width: 100%;
-        max-width: 460px;
+        max-width: 100%;
         position: relative;
         cursor: pointer;
         transform: rotate(-2deg);

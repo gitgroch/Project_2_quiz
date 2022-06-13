@@ -22,8 +22,8 @@ let randomQuestion;
 // list of questions and answers in an array 
 const questions = [
     {
-        question: 'What 1999 film did Will Smith pass up to start in Wild Wild West instead?',
-        img: '<img src="assets/media/qimg_thematrix.webp" alt="Movie art featurin Neo, Trinity and Morpheus from The Matrix">',
+        question: 'What 1999 film did Will Smith pass up to star in Wild Wild West?',
+        img: '<img src="assets/media/qimg_www.webp" alt="Will Smith and Kevin Kline in Wild Wild West">',
         answers: [
             { text: 'The Matrix', correct: true },
             { text: 'Dark City', correct: false },
