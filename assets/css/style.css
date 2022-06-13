@@ -183,10 +183,10 @@ body {
     /* === 4.1 Buttons === */
 
     .btn {
-        font-size: 2.4rem;
+        font-size: 2rem;
         font-family: var(--ff-sec);
         padding: 1rem;
-        width: 15rem;
+        max-width: 30rem;
         text-align: center;
         margin: 1rem;
         text-decoration: none;
