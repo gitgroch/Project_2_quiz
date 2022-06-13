@@ -203,6 +203,12 @@ body {
     width: 100%;
 }
 
+/* === 3.3 Global Styles === */
+
+.hide {
+    display: none;
+}
+
 /*  =============
     4. Utilities 
     ============= */
@@ -226,5 +232,19 @@ body {
         cursor: pointer;
         background-color: var(--background-ter);
     }
+
+    .start-btn {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 80vw;
+        margin: 0 auto;
+        padding: 2rem;
+
+    }
+
 
     
