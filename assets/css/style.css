@@ -123,14 +123,16 @@ select {
     2. typography 
     ============= */
 h1,
-h2 {
+h2,
+#question {
     font-family: var(--ff-prim);
     color: Var(--clr-prim);
 }
 
 /* clamp sets responsive font size (Min value, preferred value, max value */
 
-h1 {
+h1,
+#question {
     font-size: clamp(1rem, 1rem + 10vw, 4rem);
 }
 
