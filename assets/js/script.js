@@ -9,6 +9,7 @@ const nextButton = document.getElementById('next-btn');
 const questionContainer = document.getElementById('question-container');
 const questionElement = document.getElementById('question')
 const answerContainer = document.getElementById('answer');
+const choiceText = document.getElementById('choice-text')
 
 // undefined variable to hold question index 
 let currentQuestionIndex;
@@ -44,6 +45,7 @@ function startQuiz(){
     randomQuestion = questions.sort(() => Math.random() - .5);
     // sets current question index to 0 (start)
     currentQuestionIndex = 0;
+    // Call set question function pull in a question 
     setQuestion();
     console.log('question shown');
 
@@ -54,24 +56,34 @@ function startQuiz(){
  * Sets up next question when next button is clicked 
  */
  function setQuestion() {
+    //  calls showQuestion function to display a random question (andomQuestion) from the question array (currentQuestionIndex)
     showQuestion(randomQuestion[currentQuestionIndex])
+
 }
 
 /**
- * Shows a question object from question array 
- * 
+ * Inserts question text from questions array into DOM 
  */
 function showQuestion(question) {
+    // Sets inner text of the question Div in the DOM to text from the question array 
     questionElement.innerText = question.question;
+    //  A loop for all possible answers 
+    question.answers.forEach(answer => {
+        const button = document.createElement('div')
+        button.innerText = answer.text
+        button.classList.add('answer-container')
+        if (answer.correct) {
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener('click', selectAnswer)
+        answerContainer.appendChild(button)
+    });
 }
-
-
-
 
 
 /**
  * Carries out actions when answer is selected 
  */
-function selectAnswer  () {
+function selectAnswer  (e) {
 
 }
