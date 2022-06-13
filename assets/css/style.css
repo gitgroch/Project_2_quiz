@@ -4,6 +4,8 @@
     1.1 CSS Reset 
     1.2 Variables
 2. Typography
+3. Page Styles 
+    3.1 Home Page Styles
 
 */
 
@@ -115,7 +117,7 @@ select {
     --fw-900: 900;
 }
 
-*  =============
+/*  =============
     2. typography 
     ============= */
 h1,
@@ -139,3 +141,35 @@ p {
     font-size: clamp(.5rem, .5rem + 10vw, 1rem);
     color: var(--clr-sec);
 }
+
+/*  =============
+    3. Page Styles  
+    ============= */
+
+/* === 3.1 Home Page Styles  === */
+
+body {
+    background-color: var(--background);
+}
+
+.container { 
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80vw;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
