@@ -13,6 +13,7 @@ const choiceText = document.getElementById('choice-text')
 const welcomeNote = document.getElementById('welcome')
 const questionImage = document.getElementById('image-box')
 
+let correctAnswers = 0;
 
 
 // undefined variables to hold question index and the value for random question
@@ -141,7 +142,10 @@ function showQuestion(question) {
 function selectAnswer  (e) {
     const selectedButton = e.target 
     const correct = selectedButton.dataset.correct
-    // setStatusClass(document.body, correct)
+    if (correct){
+        correctAnswers++
+        console.log(correctAnswers)
+    }
     Array.from(answerContainer.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
@@ -151,6 +155,7 @@ function selectAnswer  (e) {
         startButton.innerText = 'Restart Quiz'
         startButton.classList.remove('hide')
         startButton.classList.add('restart-btn')
+        correctAnswers = 0
     }
     }
     
