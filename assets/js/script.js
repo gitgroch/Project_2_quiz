@@ -11,6 +11,8 @@ const questionElement = document.getElementById('question')
 const answerContainer = document.getElementById('answer');
 const choiceText = document.getElementById('choice-text')
 const welcomeNote = document.getElementById('welcome')
+let resultBox = document.getElementById('result')
+
 
 
 // undefined variable to hold question index 
@@ -33,7 +35,10 @@ const questions = [
 // Event Listeners 
 
 startButton.addEventListener('click', startQuiz);
-
+nextButton.addEventListener('click', () => {
+    currentQuestionIndex++
+    setQuestion()
+})
 
 /**
  * Hide Question before start, hide start button when pressed, then show question.
@@ -90,7 +95,35 @@ function showQuestion(question) {
  * Carries out actions when answer is selected 
  */
 function selectAnswer  (e) {
+    const selectedButton = e.target 
+    const correct = selectedButton.dataset.correct
+    // setStatusClass(document.body, correct)
+    Array.from(answerContainer.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct)
+    })
+    if (randomQuestion.length > currentQuestionIndex + 1) {
+        nextButton.classList.remove('hide')
+    } else {
+        startButton.innerText = 'Restart Quiz'
+        questionContainer.classList.add('hide')
+        startButton.classList.remove('hide')
+    }
+    }
+    
 
+function setStatusClass(element, correct) {
+    clearStatusClass(element);
+    if (correct) {
+        element.classList.add('correct')
+    } else {
+        element.classList.add('wrong')
+    }
+
+}
+
+function clearStatusClass(element) {
+    resultBox.classList.remove('correct')
+    resultBox.classList.remove('wrong')
 }
 
 function resetState (){
