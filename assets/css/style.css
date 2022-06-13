@@ -6,6 +6,8 @@
 2. Typography
 3. Page Styles 
     3.1 Home Page Styles
+4. Utilities
+    4.1 Buttons 
 
 */
 
@@ -156,6 +158,7 @@ body {
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     max-width: 80vw;
@@ -173,3 +176,28 @@ body {
     align-items: center;
 }
 
+/*  =============
+    4. Utilities 
+    ============= */
+
+    /* === 4.1 Buttons === */
+
+    .btn {
+        font-size: 2.4rem;
+        font-family: var(--ff-sec);
+        padding: 1rem;
+        width: 15rem;
+        text-align: center;
+        margin: 1rem;
+        text-decoration: none;
+        color: var(--clr-sec);
+        background-color: var(--background-sec);
+        border-radius: 5px; 
+    }
+
+    .btn:hover {
+        cursor: pointer;
+        background-color: var(--background-ter);
+    }
+
+    
