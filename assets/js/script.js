@@ -141,8 +141,8 @@ function selectAnswer  (e) {
         nextButton.classList.remove('hide')
     } else {
         startButton.innerText = 'Restart Quiz'
-        questionContainer.classList.add('hide')
         startButton.classList.remove('hide')
+        startButton.classList.add('restart-btn')
     }
     }
     

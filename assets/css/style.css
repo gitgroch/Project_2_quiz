@@ -8,6 +8,7 @@
     3.1 Home Page Styles
 4. Utilities
     4.1 Buttons 
+5. Media Queries 
 
 */
 
@@ -123,8 +124,8 @@ select {
     2. typography 
     ============= */
 h1,
-h2,
-#question {
+h2
+{
     font-family: var(--ff-prim);
     color: Var(--clr-prim);
 }
@@ -132,7 +133,7 @@ h2,
 /* clamp sets responsive font size (Min value, preferred value, max value */
 
 h1,
-#question {
+{
     font-size: clamp(1rem, 1rem + 10vw, 4rem);
 }
 
@@ -144,6 +145,14 @@ p {
     font-family: var(--ff-sec);
     font-size: clamp(.5rem, .5rem + 10vw, 1rem);
     color: var(--clr-sec);
+}
+
+#question {
+    font-size: 2.5rem;
+    font-family: var(--ff-prim);
+    color: Var(--clr-prim);
+    text-align: center;
+}
 }
 
 /*  =============
@@ -158,7 +167,7 @@ body {
 
 .container { 
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -223,9 +232,8 @@ body {
         background-color: var(--background-ter);
     }
 
-    .start-btn {
+    .start-page {
         width: 100vw;
-        height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -236,6 +244,13 @@ body {
 
     }
 
+    .start-btn-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
 
 /* CSS */
 .choice-btn  {
@@ -297,4 +312,15 @@ body {
 
 .wrong {
     background-color: red;
+}
+
+@media all and (min-width: 768px) {
+
+h1 {
+    font-size: 4rem;
+}
+
+#question {
+    font-size: 4rem;
+
 }
