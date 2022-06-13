@@ -23,7 +23,7 @@ let randomQuestion;
 const questions = [
     {
         question: 'What 1999 film did Will Smith pass up to start in Wild Wild West instead?',
-        img: '<img src="assets/media/qimg_picard_tea.webp" alt="Captain Picard with a cup of tea">',
+        img: '<img src="assets/media/qimg_thematrix.webp" alt="Movie art featurin Neo, Trinity and Morpheus from The Matrix">',
         answers: [
             { text: 'The Matrix', correct: true },
             { text: 'Dark City', correct: false },
@@ -33,7 +33,7 @@ const questions = [
     },
     {
         question: 'What is the name of Ripley\'s cat in "Alien"?',
-        img: '<img src="assets/media/qimg_picard_tea.webp" alt="Captain Picard with a cup of tea">',
+        img: '<img src="assets/media/qimg_alien_cat.webp" alt="Ripley and her cat from the movie Alien">',
         answers: [
             { text: 'Brian', correct: false },
             { text: 'Spot', correct: false },
@@ -43,7 +43,7 @@ const questions = [
     },
     {
         question: 'Who played Mad Max in the original Mad Max trilogy?',
-        img: '<img src="assets/media/qimg_picard_tea.webp" alt="Captain Picard with a cup of tea">',
+        img: '<img src="assets/media/qimg_mad_max.webp" alt="A group of road warrioes from the movie Mad Max">',
         answers: [
             { text: 'Keanue Reeves', correct: false },
             { text: 'Mel Gibson', correct: true },
@@ -53,7 +53,7 @@ const questions = [
     },
     {
         question: 'In what year does the movie \'Blade Runner\' take place?',
-        img: '<img src="assets/media/qimg_picard_tea.webp" alt="Captain Picard with a cup of tea">',
+        img: '<img src="assets/media/qimg_bladerunner.webp" alt="Movie art featureing key charachters from the film BladeRunner ">',
         answers: [
             { text: '2019', correct: true },
             { text: '2049', correct: false },
