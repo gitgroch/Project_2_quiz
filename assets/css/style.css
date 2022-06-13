@@ -216,6 +216,7 @@ p {
 .img-box {
     display: flex;
     position: relative;
+    justify-content: center;
     margin-bottom: 1.5rem;
 
 }
@@ -226,7 +227,7 @@ p {
 
     /* === 4.1 Buttons === */
 
-    .btn {
+    /* .btn {
         font-size: 1rem;
         font-family: var(--ff-sec);
         padding: 1rem;
@@ -242,7 +243,54 @@ p {
     .btn:hover {
         cursor: pointer;
         background-color: var(--background-ter);
-    }
+    } */
+
+    .btn  {
+        background-color: var(--background-sec);
+        border: 0 solid #E5E7EB;
+        box-sizing: border-box;
+        color: var(--clr-sec);
+        font-family: var(--ff-sec);
+        font-size: 1rem;
+        font-weight: 700;
+        justify-content: center;
+        line-height: 1.75rem;
+        padding: .2rem 2rem;
+        position: relative;
+        text-align: center;
+        text-decoration: none #000000 solid;
+        text-decoration-thickness: auto;
+        width: 100%;
+        max-width: 460px;
+        position: relative;
+        cursor: pointer;
+        transform: rotate(-2deg);
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        margin-bottom: 1.5rem;
+      }
+      
+      .btn:focus {
+        outline: 0;
+      }
+      
+      .btn:after {
+        content: '';
+        position: absolute;
+        border: 1px solid #000000;
+        bottom: 4px;
+        left: 4px;
+        width: calc(100% - 1px);
+        height: calc(100% - 1px);
+      }
+      
+      .btn:hover:after {
+        bottom: 2px;
+        left: 2px;
+      }
+
+    
 
     .start-page {
         width: 100vw;
@@ -264,7 +312,7 @@ p {
     align-items: center;
     }
 
-/* CSS */
+
 .choice-btn  {
   background-color: var(--background-sec);
   border: 0 solid #E5E7EB;
