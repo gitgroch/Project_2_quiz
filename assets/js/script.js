@@ -10,6 +10,8 @@ const questionContainer = document.getElementById('question-container');
 const questionElement = document.getElementById('question')
 const answerContainer = document.getElementById('answer');
 const choiceText = document.getElementById('choice-text')
+const welcomeNote = document.getElementById('welcome')
+
 
 // undefined variable to hold question index 
 let currentQuestionIndex;
@@ -40,6 +42,7 @@ startButton.addEventListener('click', startQuiz);
 function startQuiz(){
     // hides start button and shows question 
     startButton.classList.add('hide');
+    welcomeNote.classList.add('hide');
     questionContainer.classList.remove('hide');
     // randomises questions by sorting the elements of the question array and assigning them a random value 
     randomQuestion = questions.sort(() => Math.random() - .5);
@@ -56,6 +59,8 @@ function startQuiz(){
  * Sets up next question when next button is clicked 
  */
  function setQuestion() {
+    //  Resets everything to original state  when a new question is set
+    resetState()
     //  calls showQuestion function to display a random question (andomQuestion) from the question array (currentQuestionIndex)
     showQuestion(randomQuestion[currentQuestionIndex])
 
@@ -69,9 +74,9 @@ function showQuestion(question) {
     questionElement.innerText = question.question;
     //  A loop for all possible answers 
     question.answers.forEach(answer => {
-        const button = document.createElement('div')
+        const button = document.createElement('button')
         button.innerText = answer.text
-        button.classList.add('answer-container')
+        button.classList.add('choice-btn')
         if (answer.correct) {
             button.dataset.correct = answer.correct
         }
@@ -86,4 +91,12 @@ function showQuestion(question) {
  */
 function selectAnswer  (e) {
 
+}
+
+function resetState (){
+    nextButton.classList.add('hide')
+    while (answerContainer.firstChild) {
+        answerContainer.removeChild
+        (answerContainer.firstChild)
+    }
 }
