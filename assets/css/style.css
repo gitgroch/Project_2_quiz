@@ -379,13 +379,19 @@ p {
     font-size: 1.5rem;
 }
 
-#progressBar {
+#progress-bar {
     width: 10rem;
     height: 1.5rem;
     border: 0.2rem solid var(--clr-prim) ;
     margin-top: 1rem;
     border-radius: 50px;
     overflow: hidden;
+}
+
+#progress-bar-full {
+    height: 100%;
+    background: var(--clr-sec);
+    width: 0%;
 }
 
 

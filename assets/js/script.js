@@ -14,6 +14,7 @@ const welcomeNote = document.getElementById('welcome')
 const questionImage = document.getElementById('image-box')
 const currentScore = document.getElementById('score')
 const progressText = document.getElementById('progress-text')
+const progressBarFull = document.getElementById('progress-bar-full')
 
 // set score and question counter to 0 at beginning of quiz
 let correctAnswers = 0;
@@ -121,7 +122,7 @@ function startQuiz(){
     questionCounter++
     console.log(questionCounter)
     progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
-
+    progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
 }
 
 /**
