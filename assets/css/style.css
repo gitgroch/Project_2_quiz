@@ -194,6 +194,15 @@ body {
 
 }
 
+.choice-num { 
+    padding: 1.5rem 2rem;
+}
+
+.choice-text {
+    padding: 1.5rem;
+    width: 100%;
+}
+
 /*  =============
     4. Utilities 
     ============= */
