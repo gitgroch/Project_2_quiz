@@ -341,7 +341,6 @@ p {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  margin-bottom: 1.5rem;
 }
 
 .choice-btn:focus {

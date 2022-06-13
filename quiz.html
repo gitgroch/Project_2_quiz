@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Home Page</title>
     <style>
-         @import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat&family=Unica+One&display=swap');
     </style>
 </head>
@@ -21,37 +22,43 @@
         </ul>
     </nav> -->
 </div>
+
 <body>
-    <!-- Question 1  -->
+
     <div class="container hide" id="question-container">
-        <div class="flex-column flex-center" ></div>
+        <div class="flex-column flex-center"></div>
+        <div id="score-area">
+            <div class="score-area-item">
+                <p>Question Number Display</p>
+            </div>
+            <div class="score-area-item">
+                <p>Score</p>
+            </div>
+        </div>
         <div id="question">Here is a Question? </div>
         <div class="img-box" id="image-box"></div>
         <div id="answer" class="answer-container">
             <p class="choice-num">1.</p>
             <p class="choice-text">This is answer 1</p>
         </div>
-        <div id="result"></div>
         <div class="ctrl-buttons">
             <button id="next-btn" class="btn">Next</button>
+        </div>
     </div>
-    </div>
-
-    <div class= "start-page" >
+    <div class="start-page">
         <div id="welcome">
-        <h1 >Welcome to The quiz</h1>
-        <h2>Instructions:</h2>
-        <P>Click the button below to start the quiz and answer as many questions as possible</P>
+            <h1>Welcome to The quiz</h1>
+            <P>Click the button below to start the quiz and answer as many questions as possible</P>
         </div>
     </div>
     <div class="start-btn-container">
         <button id="start-btn" class="btn">Start Quiz</button>
-        </div>
+    </div>
 
-    <script src="assets/js/script.js"></script> 
+    <script src="assets/js/script.js"></script>
     <footer>
-        
-    </footer> 
-</body>
-</html>
 
+    </footer>
+</body>
+
+</html>
