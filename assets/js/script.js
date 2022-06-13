@@ -12,9 +12,10 @@ const answerContainer = document.getElementById('answer');
 const choiceText = document.getElementById('choice-text')
 const welcomeNote = document.getElementById('welcome')
 const questionImage = document.getElementById('image-box')
+const currentScore = document.getElementById('score')
 
+// set score to 0 at beginning of quiz
 let correctAnswers = 0;
-
 
 // undefined variables to hold question index and the value for random question
 let currentQuestionIndex;
@@ -91,6 +92,7 @@ function startQuiz(){
     startButton.classList.add('hide');
     welcomeNote.classList.add('hide');
     questionContainer.classList.remove('hide');
+    currentScore.innerText = '0'
     // randomises questions by sorting the elements of the question array and assigning them a random value 
     randomQuestion = questions.sort(() => Math.random() - .5);
     // sets current question index to 0 (start)
@@ -144,6 +146,7 @@ function selectAnswer  (e) {
     const correct = selectedButton.dataset.correct
     if (correct){
         correctAnswers++
+        currentScore.innerText = correctAnswers
         console.log(correctAnswers)
     }
     Array.from(answerContainer.children).forEach(button => {
