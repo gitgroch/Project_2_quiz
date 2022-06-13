@@ -176,6 +176,24 @@ body {
     align-items: center;
 }
 
+/* === 3.2 Quiz Page Styles */
+
+.answer-container {
+    display: flex;
+    margin-bottom: 1rem;
+    font-size: var(--fs-500);
+    width: 100%;
+    min-width: 80vw;
+    border-radius: 5px;
+    background-color: var(--background-sec);
+}
+
+.answer-container:hover {
+    cursor: pointer;
+    background-color: var(--background-ter);
+
+}
+
 /*  =============
     4. Utilities 
     ============= */
