@@ -363,26 +363,31 @@ p {
 /* score area */
 #score-area {
     display: flex;
-    justify-content: space-between;
+    gap: 5em;
+
 }
 
 .score-area-prefix {
     text-align: center;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 .score-main-text {
     text-align: center;
+    font-family: var(--ff-sec);
+    color: var(--clr-sec);
+    font-size: 2rem;
 }
 
 #progressBar {
     width: 10rem;
     height: 1.5rem;
     border: 0.2rem solid var(--clr-prim) ;
-    margin-top: 2rem;
+    margin-top: 1rem;
     border-radius: 50px;
     overflow: hidden;
 }
+
 
 
 @media (min-width: 768px) {
@@ -412,6 +417,12 @@ p {
 
     .img-box {
         height: 50%;
+    }
+
+    #score-area {
+        display: flex;
+        gap: 30em;
+    
     }
 
 }
