@@ -22,12 +22,48 @@ let randomQuestion;
 // list of questions in an array 
 const questions = [
     {
-        question: 'Who played Neo in the 1999 movie The Matrix?',
+        question: 'What 1999 film did Will Smith pass up to start in Wild Wild West instead?',
         answers: [
-            { text: 'Keanue Reeves', correct: true },
+            { text: 'The Matrix', correct: true },
+            { text: 'Dark City', correct: false },
+            { text: 'Star Wars: Episode 1', correct: false },
+            { text: 'The Truman Show', correct: false }
+        ]
+    },
+    {
+        question: 'What is the name of Ripley\'s cat in "Alien"?',
+        answers: [
+            { text: 'Brian', correct: false },
+            { text: 'Spot', correct: false },
+            { text: 'Mitty', correct: false },
+            { text: 'Jonesy', correct: true }
+        ]
+    },
+    {
+        question: 'Who played Mad Max in the original Mad Max trilogy?',
+        answers: [
+            { text: 'Keanue Reeves', correct: false },
+            { text: 'Mel Gibson', correct: true },
             { text: 'Tom Cruise', correct: false },
-            { text: 'Will Smith', correct: false },
             { text: 'Nicolas Cage', correct: false }
+        ]
+    },
+    {
+        question: 'In what year does the movie \'Blade Runner\' take place?',
+        answers: [
+            { text: '2019', correct: true },
+            { text: '2049', correct: false },
+            { text: '2077', correct: false },
+            { text: '2022', correct: false }
+        ]
+    },
+    {
+        question: 'What is Captain Picard\'s favourite tea?',
+        answers: [
+            { text: 'Matcha ', correct: false },
+            { text: 'Oolong ', correct: false },
+            { text: 'Earl Grey', correct: true },
+            { text: 'Yorkshire Tea', correct: false }
         ]
     },
 ]
