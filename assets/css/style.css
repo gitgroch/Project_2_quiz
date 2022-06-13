@@ -382,7 +382,7 @@ p {
 #progress-bar {
     width: 10rem;
     height: 1.5rem;
-    border: 0.2rem solid var(--clr-prim) ;
+    border: 0.2rem solid var(--background-sec) ;
     margin-top: 1rem;
     border-radius: 50px;
     overflow: hidden;
@@ -390,7 +390,7 @@ p {
 
 #progress-bar-full {
     height: 100%;
-    background: var(--clr-sec);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(40,75,99,1) 35%, rgba(0,212,255,1) 100%);;
     width: 0%;
 }
 
