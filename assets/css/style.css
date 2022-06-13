@@ -57,6 +57,7 @@ body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
+    background: var(--background);
 }
 
 /* A elements that don't have a class get default styles */
@@ -160,9 +161,6 @@ p {
 
 /* === 3.1 Home Page Styles  === */
 
-body {
-    background-color: var(--background);
-}
 
 .container { 
     width: 100vw;
@@ -206,6 +204,10 @@ body {
 
 .hide {
     display: none;
+}
+
+.img-box {
+    display: block;
 }
 
 /*  =============

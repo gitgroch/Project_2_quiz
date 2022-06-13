@@ -11,18 +11,19 @@ const questionElement = document.getElementById('question')
 const answerContainer = document.getElementById('answer');
 const choiceText = document.getElementById('choice-text')
 const welcomeNote = document.getElementById('welcome')
-let resultBox = document.getElementById('result')
+const questionImage = document.getElementById('image-box')
 
 
 
-// undefined variable to hold question index 
+// undefined variables to hold question index and the value for random question
 let currentQuestionIndex;
 let randomQuestion;
 
-// list of questions in an array 
+// list of questions and answers in an array 
 const questions = [
     {
         question: 'What 1999 film did Will Smith pass up to start in Wild Wild West instead?',
+        img: '<img src="assets/media/qimg_picard_tea.webp" alt="Captain Picard with a cup of tea">',
         answers: [
             { text: 'The Matrix', correct: true },
             { text: 'Dark City', correct: false },
@@ -32,6 +33,7 @@ const questions = [
     },
     {
         question: 'What is the name of Ripley\'s cat in "Alien"?',
+        img: '<img src="assets/media/qimg_picard_tea.webp" alt="Captain Picard with a cup of tea">',
         answers: [
             { text: 'Brian', correct: false },
             { text: 'Spot', correct: false },
@@ -41,6 +43,7 @@ const questions = [
     },
     {
         question: 'Who played Mad Max in the original Mad Max trilogy?',
+        img: '<img src="assets/media/qimg_picard_tea.webp" alt="Captain Picard with a cup of tea">',
         answers: [
             { text: 'Keanue Reeves', correct: false },
             { text: 'Mel Gibson', correct: true },
@@ -50,6 +53,7 @@ const questions = [
     },
     {
         question: 'In what year does the movie \'Blade Runner\' take place?',
+        img: '<img src="assets/media/qimg_picard_tea.webp" alt="Captain Picard with a cup of tea">',
         answers: [
             { text: '2019', correct: true },
             { text: '2049', correct: false },
@@ -59,6 +63,7 @@ const questions = [
     },
     {
         question: 'What is Captain Picard\'s favourite tea?',
+        img: '<img src="assets/media/qimg_picard_tea.webp" alt="Captain Picard with a cup of tea">',
         answers: [
             { text: 'Matcha ', correct: false },
             { text: 'Oolong ', correct: false },
@@ -105,14 +110,16 @@ function startQuiz(){
     //  calls showQuestion function to display a random question (andomQuestion) from the question array (currentQuestionIndex)
     showQuestion(randomQuestion[currentQuestionIndex])
 
+
 }
 
 /**
  * Inserts question text from questions array into DOM 
  */
 function showQuestion(question) {
-    // Sets inner text of the question Div in the DOM to text from the question array 
+    // Sets inner text of the question Div in the DOM to text from the question array
     questionElement.innerText = question.question;
+    questionImage.innerHTML =question.img;
     //  A loop for all possible answers 
     question.answers.forEach(answer => {
         const button = document.createElement('button')
@@ -125,6 +132,7 @@ function showQuestion(question) {
         answerContainer.appendChild(button)
     });
 }
+
 
 
 /**
@@ -147,6 +155,7 @@ function selectAnswer  (e) {
     }
     
 
+
 function setStatusClass(element, correct) {
     clearStatusClass(element);
     if (correct) {
@@ -158,8 +167,8 @@ function setStatusClass(element, correct) {
 }
 
 function clearStatusClass(element) {
-    resultBox.classList.remove('correct')
-    resultBox.classList.remove('wrong')
+    element.classList.remove('correct')
+    element.classList.remove('wrong')
 }
 
 function resetState (){
