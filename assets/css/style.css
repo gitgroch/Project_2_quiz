@@ -293,6 +293,33 @@ input::placeholder {
     object-fit: contain;
 }
 
+footer {
+    height: fit-content;
+
+}
+
+.socials {
+    list-style: none;
+    text-align: center;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+.socials li {
+    display: inline;
+}
+
+.socials i {
+    font-size: 120%;
+    margin: 0;
+    color: var(--clr-prim);
+}
+
+.socials i:hover {
+    color: var(--clr-sec);
+}
+
+
 /*  =============
     4. Utilities 
     ============= */
