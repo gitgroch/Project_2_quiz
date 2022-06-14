@@ -3,18 +3,14 @@ document.addEventListener("DOMContentLoaded", function () {});
 
 // Global Variables
 // Variables from DOM
-const endButton = document.getElementById('end-btn')
-const restartButton = document.getElementById('restart-btn')
 const nextButton = document.getElementById('next-btn');
 const questionContainer = document.getElementById('question-container');
-const questionElement = document.getElementById('question')
+const questionElement = document.getElementById('question');
 const answerContainer = document.getElementById('answer');
-const choiceText = document.getElementById('choice-text')
-const welcomeNote = document.getElementById('welcome')
-const questionImage = document.getElementById('image-box')
-const currentScore = document.getElementById('score')
-const progressText = document.getElementById('progress-text')
-const progressBarFull = document.getElementById('progress-bar-full')
+const questionImage = document.getElementById('image-box');
+const currentScore = document.getElementById('score');
+const progressText = document.getElementById('progress-text');
+const progressBarFull = document.getElementById('progress-bar-full');
 
 // set score and question counter to 0 at beginning of quiz
 let correctAnswers = 0;
@@ -245,9 +241,9 @@ const questions = [{
 document.addEventListener("DOMContentLoaded", startQuiz);
 // When next button is clicked increment currentQuestionIndex and call function to set next question 
 nextButton.addEventListener('click', () => {
-    currentQuestionIndex++
-    setQuestion()
-})
+    currentQuestionIndex++;
+    setQuestion();
+});
 
 /**
  * Hide Place holder Question before start,  then show question.
@@ -258,7 +254,7 @@ nextButton.addEventListener('click', () => {
  */
 function startQuiz() {
     questionContainer.classList.remove('hide');
-    currentScore.innerText = 0
+    currentScore.innerText = 0;
     questionCounter = 0;
     // randomises questions by sorting the elements of the question array and assigning them a random value 
     randomQuestion = questions.sort(() => Math.random() - .5);
@@ -275,15 +271,15 @@ function startQuiz() {
  */
 function setQuestion() {
     //  Resets everything to original state when a new question is set
-    resetState()
+    resetState();
     //  calls showQuestion function to display a random question (randomQuestion) from the question array (currentQuestionIndex)
-    showQuestion(randomQuestion[currentQuestionIndex])
+    showQuestion(randomQuestion[currentQuestionIndex]);
     // Increment question counter 
-    questionCounter++
+    questionCounter++;
     // display current question out of all possible questions 
-    progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
+    progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`;
     // increase progress bar by applying style based on Question Counter divided by max questions to create a percentage
-    progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
+    progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`;
 }
 
 /**
@@ -299,19 +295,19 @@ function showQuestion(question) {
     //  A loop for all possible answers in array
     question.answers.forEach(answer => {
         // assigns variable to an answer button to be created 
-        const button = document.createElement('button')
+        const button = document.createElement('button');
         // sets inner text of button to answer component from array
-        button.innerText = answer.text
+        button.innerText = answer.text;
         // Adds class to button 
-        button.classList.add('choice-btn')
+        button.classList.add('choice-btn');
         // in the answer is correct add data attribute correct 
         if (answer.correct) {
-            button.dataset.correct = answer.correct
+            button.dataset.correct = answer.correct;
         }
         // event listener for which answer is clicked 
-        button.addEventListener('click', selectAnswer)
+        button.addEventListener('click', selectAnswer);
         // adds button to DOM
-        answerContainer.appendChild(button)
+        answerContainer.appendChild(button);
     });
 }
 
@@ -321,26 +317,25 @@ function showQuestion(question) {
  */
 function selectAnswer(e) {
     // Sets variable to which button is selected
-    const selectedButton = e.target
+    const selectedButton = e.target;
     // sets variable based on if the data attribute is correct
-    const correct = selectedButton.dataset.correct
+    const correct = selectedButton.dataset.correct;
     // if the dataset is correct, increment correctAnswwer score, add text to show answer 
     if (correct) {
-        correctAnswers++
-        currentScore.innerText = correctAnswers
+        correctAnswers++;
+        currentScore.innerText = correctAnswers;
     }
     // creates an array from children of answerContainer, then lopops through them and sets status based on if the answer was correct
     Array.from(answerContainer.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct)
-    })
+        setStatusClass(button, button.dataset.correct);
+    });
     // Checks if length of array is greater than question index +1, shows next button if true, else goes to end page
     if (randomQuestion.length > currentQuestionIndex + 1) {
-        nextButton.classList.remove('hide')
+        nextButton.classList.remove('hide');
     } else {
         // Sets a local storage item mostRecenScores and assigns it the value of correct answers
-        localStorage.setItem('mostRecentScore', correctAnswers)
-        return window.location.assign('end.html')
-        correctAnswers = 0
+        localStorage.setItem('mostRecentScore', correctAnswers);
+        return window.location.assign('end.html');
     }
 }
 
@@ -351,9 +346,9 @@ function setStatusClass(element, correct) {
     clearStatusClass(element);
 
     if (correct) {
-        element.classList.add('correct')
+        element.classList.add('correct');
     } else {
-        element.classList.add('wrong')
+        element.classList.add('wrong');
     }
 
 }
@@ -362,16 +357,16 @@ function setStatusClass(element, correct) {
  * Removes class as part of reset
  */
 function clearStatusClass(element) {
-    element.classList.remove('correct')
-    element.classList.remove('wrong')
+    element.classList.remove('correct');
+    element.classList.remove('wrong');
 }
 
 /**
  * hides the next button, loops through children of answer button elements and removes it
  */
 function resetState() {
-    nextButton.classList.add('hide')
+    nextButton.classList.add('hide');
     while (answerContainer.firstChild) {
-        answerContainer.removeChild(answerContainer.firstChild)
+        answerContainer.removeChild(answerContainer.firstChild);
     }
 }
