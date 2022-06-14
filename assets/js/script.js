@@ -169,7 +169,6 @@ function selectAnswer  (e) {
     } else {
         // Stores score to an Item  
         localStorage.setItem('mostRecentScore', correctAnswers)
-        console.log(mostRecentScore)
         return window.location.assign('end.html')
         correctAnswers = 0
     }

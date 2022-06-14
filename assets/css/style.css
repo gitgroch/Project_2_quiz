@@ -419,6 +419,7 @@ input::placeholder {
     justify-content: space-between;
     margin-left: 1rem;
     margin-right: 1rem;
+    gap: 5rem;
 }
     
 
@@ -449,6 +450,23 @@ input::placeholder {
     width: 0%;
 }
 
+.high-score {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    margin: 0 auto;
+    padding-right: 40px;
+}
+
+#high-scores-list {
+    font-family: var(--ff-sec);
+    color: var(--clr-sec);
+    list-style: none;
+}
+
+
+#high-scores-list ul {
+
+}
 
 
 @media (min-width: 768px) {
