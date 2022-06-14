@@ -16,7 +16,7 @@ const questionImage = document.getElementById('image-box')
 const currentScore = document.getElementById('score')
 const progressText = document.getElementById('progress-text')
 const progressBarFull = document.getElementById('progress-bar-full')
-const finalScoreText = document.getElementById('final-score')
+
 
 // set score and question counter to 0 at beginning of quiz
 let correctAnswers = 0;
@@ -195,4 +195,41 @@ function resetState (){
         answerContainer.removeChild
         (answerContainer.firstChild)
     }
+}
+
+// End Page JS 
+
+const username = document.getElementById('username')
+const saveScore = document.getElementById('save-score-btn')
+const finalScore = document.getElementById('final-score')
+const mostRecentScore = document.getElementById('most-recent-score')
+
+const highScores = JSON.parse(localStorage.getItem('highScores')) || []
+
+const MAX_HIGH_SCORES = 5 
+
+finalScore.innerText = mostRecentScore
+
+username.addEventListener('keyup', ()=> {
+    saveScoreBtn.disabled = !username.value 
+})
+
+function saveHighScore (e) {
+    e.preventDefault()
+
+    const score = {
+        score: mostRecentScore,
+        name: username.ariaValueMax
+    }
+
+    highScores.push(score)
+
+    highScores.sort((a,b) => {
+        return b.score - a.score
+    })
+
+    highScores.splice(5)
+
+    localStorage.setItem('highScores', JSON.stringify(highScores))
+    window.location.assign('/')
 }
