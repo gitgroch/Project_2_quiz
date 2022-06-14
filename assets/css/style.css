@@ -221,6 +221,59 @@ p {
     margin: 1.2rem 0;
 }
 
+/* score area */
+#score-area {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    gap: 5rem;
+}
+
+.score-area-prefix {
+    text-align: center;
+    font-size: 1rem;
+}
+
+.score-main-text {
+    text-align: center;
+    font-family: var(--ff-sec);
+    color: var(--clr-sec);
+    font-size: 1.5rem;
+}
+
+/* creates empty progress bar */
+#progress-bar {
+    width: 10rem;
+    height: 1.5rem;
+    border: 0.2rem solid rgba(0, 212, 255, 0.6);
+    margin-top: 1rem;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+/* Sets style for filling of progress bar */
+#progress-bar-full {
+    height: 100%;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(40, 75, 99, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    ;
+    width: 0%;
+}
+
+.high-score {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    margin: 0 auto;
+    padding-right: 40px;
+}
+
+#high-scores-list {
+    font-family: var(--ff-sec);
+    color: var(--clr-sec);
+    list-style: none;
+}
+
+
 /* === 3.3 End Page Styles */
 
 .end-form-container {
@@ -335,6 +388,7 @@ footer {
 
 /* === 4.1 Buttons === */
 /* button styling without display flex so that it hides properly from JS sript */
+/* (Button by Alpine Daily see read me for credit) */
 .btn {
     background-color: var(--background-sec);
     border: 0 solid #E5E7EB;
@@ -391,15 +445,7 @@ footer {
 
 }
 
-/* start button  */
-/* .start-btn-container {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-} */
-
+/* Answer Choice button (Button by Alpine Daily see read me for credit) */
 .choice-btn {
     background-color: var(--background-sec);
     border: 0 solid #E5E7EB;
@@ -445,68 +491,10 @@ footer {
     left: 2px;
 }
 
+/* Next button styling */
 .ctrl-buttons {
     display: flex;
     justify-content: center;
-}
-
-/* score area */
-#score-area {
-    display: flex;
-    justify-content: space-between;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    gap: 5rem;
-}
-
-
-.score-area-prefix {
-    text-align: center;
-    font-size: 1rem;
-}
-
-.score-main-text {
-    text-align: center;
-    font-family: var(--ff-sec);
-    color: var(--clr-sec);
-    font-size: 1.5rem;
-}
-
-#progress-bar {
-    width: 10rem;
-    height: 1.5rem;
-    border: 0.2rem solid rgba(0, 212, 255, 0.6);
-    margin-top: 1rem;
-    border-radius: 50px;
-    overflow: hidden;
-}
-
-#progress-bar-full {
-    height: 100%;
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(40, 75, 99, 1) 35%, rgba(0, 212, 255, 1) 100%);
-    ;
-    width: 0%;
-}
-
-.high-score {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    margin: 0 auto;
-    padding-right: 40px;
-}
-
-#high-scores-list {
-    font-family: var(--ff-sec);
-    color: var(--clr-sec);
-    list-style: none;
-}
-
-
-@media (min-width: 768px) {
-    .choice-btn {
-        padding: .75rem 3rem;
-        font-size: 1.25rem;
-    }
 }
 
 .correct {
@@ -517,7 +505,13 @@ footer {
     background-color: red;
 }
 
+
+/* Media Query for screens larger that 768px */
 @media all and (min-width: 768px) {
+    .choice-btn {
+        padding: .75rem 3rem;
+        font-size: 1.25rem;
+    }
 
     h1 {
         font-size: 3.5rem;
