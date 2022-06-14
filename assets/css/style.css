@@ -103,8 +103,8 @@ select {
     --ff-prim: "Unica One", sans-serif;
     --ff-sec: "Comfortaa", sans-serif;
 
-    --background: rgb(40, 75, 99);
-    --background-sec: rgb(60, 110, 113);
+    --background: rgb(2,0,36);
+    --background-sec: rgb(40,75,99);
     --background-ter: rgb(53, 53, 53);
 
     --clr-prim: rgb(217, 217, 217);
@@ -160,7 +160,7 @@ p {
 /* === 3.1 Home Page Styles  === */
 
 .home-body{
-   background: url('../media/bg_scifi_img.webp') no-repeat center center;
+   background: linear-gradient(90deg, rgba(2,0,36,0.6) 0%, rgba(40,75,99,0.6) 35%, rgba(0,212,255,0.6) 100%), url('../media/bg_scifi_img.webp') no-repeat center center;
    background-size: cover;
 }
 
@@ -179,7 +179,6 @@ p {
     background-color: rgba(40, 75, 99, 0.75);
     padding: 2rem;
     border-radius: 50px;
-    height: 100vh;
 }
 
 .home-heading {
@@ -438,7 +437,7 @@ input::placeholder {
 #progress-bar {
     width: 10rem;
     height: 1.5rem;
-    border: 0.2rem solid var(--background-sec) ;
+    border: 0.2rem solid rgba(0,212,255,0.6) ;
     margin-top: 1rem;
     border-radius: 50px;
     overflow: hidden;
