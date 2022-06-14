@@ -14,16 +14,12 @@
 </head>
 <div class="header">
     <div class="logo"></div>
-    <!-- <nav>
-        <ul>
-            <li>Home</li>
-            <li>Restart</li>
-            <li>High Scores</li>
-        </ul>
-    </nav> -->
 </div>
+
 <body class="home-body">
+    <!-- Add hide class to hide container on start quiz -->
     <div class="container hide" id="question-container">
+        <!-- score area for progress bar and score tally -->
         <div id="score-area">
             <div class="score-area-item">
                 <p id="progress-text" class="score-area-prefix">Question #</p>
@@ -36,8 +32,7 @@
                 <div class="score-main-text" id="score">0</div>
             </div>
         </div>
-   
-        
+        <!-- Place holder structure for questions injected by JS script -->
         <div id="question">Here is a Question? </div>
         <div class="img-box" id="image-box"></div>
         <div id="answer" class="answer-container">
@@ -49,9 +44,10 @@
         </div>
     </div>
     </div>
+    <!-- link to all JS pages that interact with elements on page -->
     <script src="assets/js/script.js"></script>
-    <script src="assets/js/highscore.js"></script>  
-    <script src="assets/js/end.js"></script>  
+    <script src="assets/js/highscore.js"></script>
+    <script src="assets/js/end.js"></script>
     <footer>
     </footer>
 </body>
