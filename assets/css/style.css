@@ -6,12 +6,14 @@
 2. Typography
 3. Page Styles 
     3.1 Home Page Styles
+    3.2 Quiz Page Styles 
+    3.3 End Page Styles 
+    3.4 Global Styles 
 4. Utilities
     4.1 Buttons 
 5. Media Queries 
 
 */
-
 
 /*  ================
     1. global styles
@@ -98,13 +100,15 @@ select {
 
 /* === 1.2 Variables  */
 
+
+/* styling presets saved as root variables */
 :root {
 
     --ff-prim: "Unica One", sans-serif;
     --ff-sec: "Comfortaa", sans-serif;
 
-    --background: rgb(2,0,36);
-    --background-sec: rgb(40,75,99);
+    --background: rgb(2, 0, 36);
+    --background-sec: rgb(40, 75, 99);
     --background-ter: rgb(53, 53, 53);
 
     --clr-prim: rgb(217, 217, 217);
@@ -159,9 +163,11 @@ p {
 
 /* === 3.1 Home Page Styles  === */
 
-.home-body{
-   background: linear-gradient(90deg, rgba(2,0,36,0.6) 0%, rgba(40,75,99,0.6) 35%, rgba(0,212,255,0.6) 100%), url('../media/bg_scifi_img.webp') no-repeat center center;
-   background-size: cover;
+/* Add linear gradient to background image for contrast */
+
+.home-body {
+    background: linear-gradient(90deg, rgba(2, 0, 36, 0.6) 0%, rgba(40, 75, 99, 0.6) 35%, rgba(0, 212, 255, 0.6) 100%), url('../media/bg_scifi_img.webp') no-repeat center center;
+    background-size: cover;
 }
 
 .container {
@@ -190,15 +196,6 @@ p {
     text-align: center;
 }
 
-.flex-column {
-    display: flex;
-    flex-direction: column;
-}
-
-.flex-center {
-    justify-content: center;
-    align-items: center;
-}
 
 /* === 3.2 Quiz Page Styles */
 
@@ -255,9 +252,9 @@ input::placeholder {
 }
 
 .end-card {
-        background-color: rgba(40, 75, 99, 0.75);
-        padding: 2rem;
-        border-radius: 50px;
+    background-color: rgba(40, 75, 99, 0.75);
+    padding: 2rem;
+    border-radius: 50px;
 }
 
 .end-card h1 {
@@ -273,10 +270,21 @@ input::placeholder {
 
 /* === 3.4 Global Styles === */
 
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
 .hide {
     display: none;
 }
 
+/* Fits Images to Img Conatiner */
 .img-box {
     display: flex;
     position: relative;
@@ -293,6 +301,7 @@ input::placeholder {
     object-fit: contain;
 }
 
+/* Footer */
 footer {
     height: fit-content;
 
@@ -382,13 +391,14 @@ footer {
 
 }
 
-.start-btn-container {
+/* start button  */
+/* .start-btn-container {
     display: flex;
     position: relative;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+} */
 
 .choice-btn {
     background-color: var(--background-sec);
@@ -448,7 +458,7 @@ footer {
     margin-right: 1rem;
     gap: 5rem;
 }
-    
+
 
 .score-area-prefix {
     text-align: center;
@@ -465,7 +475,7 @@ footer {
 #progress-bar {
     width: 10rem;
     height: 1.5rem;
-    border: 0.2rem solid rgba(0,212,255,0.6) ;
+    border: 0.2rem solid rgba(0, 212, 255, 0.6);
     margin-top: 1rem;
     border-radius: 50px;
     overflow: hidden;
@@ -473,7 +483,8 @@ footer {
 
 #progress-bar-full {
     height: 100%;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(40,75,99,1) 35%, rgba(0,212,255,1) 100%);;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(40, 75, 99, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    ;
     width: 0%;
 }
 
@@ -523,7 +534,7 @@ footer {
     #score-area {
         display: flex;
         gap: 30em;
-    
+
     }
 
 
