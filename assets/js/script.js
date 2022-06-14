@@ -16,6 +16,7 @@ const questionImage = document.getElementById('image-box')
 const currentScore = document.getElementById('score')
 const progressText = document.getElementById('progress-text')
 const progressBarFull = document.getElementById('progress-bar-full')
+const finalScoreText = document.getElementById('final-score')
 
 // set score and question counter to 0 at beginning of quiz
 let correctAnswers = 0;
