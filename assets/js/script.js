@@ -238,7 +238,8 @@ const questions = [{
 
 // Event Listeners 
 // Call start quiz function whem quiz.html loads 
-document.addEventListener("DOMContentLoaded", startQuiz);
+// document.addEventListener("DOMContentLoaded", startQuiz);
+
 // When next button is clicked increment currentQuestionIndex and call function to set next question 
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++;
