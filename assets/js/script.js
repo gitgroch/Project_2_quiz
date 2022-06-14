@@ -1,3 +1,6 @@
+// Code inspired by tutorials from Web Dev Simplified and Brian Design
+// See README.md for links to tutorials used and further credit
+
 // Wait for the DOM to finish loading before starting the survey 
 document.addEventListener("DOMContentLoaded", function () {});
 

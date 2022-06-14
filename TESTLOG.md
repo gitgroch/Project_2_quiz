@@ -1,11 +1,5 @@
 # Testing 
 
-Testing methodologies and results are detailed below.
-
-## A note on Responsiveness
-
-As I took a "Mobile First" approach to development, responsiveness was tested throughout development as such responsiveness issues were addressed as the project progressed (some of these issues can befound in the Bugs & Fixes section below.)
-
 Once the site was completed and deployed, formal testing took place under the following conditions: 
 
 ## Hardware Testing 
@@ -41,7 +35,7 @@ The website was tested manually on the latest versions of following browsers:
 - All Images are responsive and scale to screen size. 
 - All Media queries work as intended to adjust elements for different screen sizes.
 - I did not find any instance of elements such as text or images touching the side of the screen at any screen size.
-- No ineternal errors are generated on the page or the console due to user actions
+- No internal errors are generated on the page or the console due to user actions
 - There are no remaining app breaking bugs.
 
 ## Lighthouse 

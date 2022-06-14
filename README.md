@@ -108,10 +108,10 @@ The fonts are sourced from Google fonts.
 
 - Answer Buttons 
     - For each question the user is presented with 4 possible answers in the forms of buttons. The user can select their answer by tapping on it. 
-    - Regardless of which button button is tapped, the color of all the buttons will change. The correct answer button will turn green and the incorrect answers will turn red. This will validate to the user if their choice was correct. 
+    - Regardless of which button is tapped, the color of all the buttons will change. The correct answer button will turn green and the incorrect answers will turn red. This will validate to the user if their choice was correct. 
 
 - Next button 
-    - Once the user answers the question, the next button will appear to prompt the user to move to the next question. 
+    - Once the user answers the question, the "next button" will appear to prompt the user to move to the next question. 
     - Allowing the user to choose when to progress, rather than doing it automatically allows them to review the answers. 
 
 
