@@ -16,19 +16,18 @@ const currentScore = document.getElementById('score')
 const progressText = document.getElementById('progress-text')
 const progressBarFull = document.getElementById('progress-bar-full')
 
-
 // set score and question counter to 0 at beginning of quiz
 let correctAnswers = 0;
 let questionCounter = 0;
 
-// set maximum amount of questions 
+// set maximum amount of questions in Quiz rotation 
 const MAX_QUESTIONS = 10;
 
 // undefined variables to hold question index and the value for random question
 let currentQuestionIndex;
 let randomQuestion;
 
-// list of questions and answers in an array 
+// list of questions,answers and images in an array 
 const questions = [{
         question: 'What 1999 film did Will Smith pass up to star in Wild Wild West?',
         img: '<img src="assets/media/qimg_www.webp" alt="Will Smith and Kevin Kline in Wild Wild West">',
@@ -156,7 +155,7 @@ const questions = [{
         ]
     },
     {
-        question: 'What year did Marty McFly travel to in Back to the Future',
+        question: 'What year did Marty McFly travel to in Back to the Future?',
         img: '<img src="assets/media/qimg_back_to_the_future.webp" alt="Marty and Doc experimenting in Back to the future ">',
         answers: [{
                 text: '1985 ',
@@ -177,7 +176,7 @@ const questions = [{
         ]
     },
     {
-        question: 'Who was not a Captain of the Starship Enterprise',
+        question: 'Who was not a Captain of the Starship Enterprise?',
         img: '<img src="assets/media/qimg_enterprise_bridge.webp" alt="A view of the bridge of the starship Enterprise">',
         answers: [{
                 text: 'Kathryn Janeway',
@@ -219,7 +218,7 @@ const questions = [{
         ]
     },
     {
-        question: 'In Terminator 2: Judgement Day, what date does Skynet become self-aware signalling the doom of the human race',
+        question: 'In Terminator 2: Judgement Day, what date does Skynet become self-aware signalling the doom of the human race?',
         img: '<img src="assets/media/qimg_terminator.webp" alt="The Terminator adjusts his sunglasses">',
         answers: [{
                 text: 'February 2, 1983',
@@ -242,22 +241,22 @@ const questions = [{
 ]
 
 // Event Listeners 
+// Call start quiz function whem quiz.html loads 
 document.addEventListener("DOMContentLoaded", startQuiz);
-// startButton.addEventListener('click', startQuiz);
-// restartButton.addEventListener('click', startQuiz);
+// When next button is clicked increment currentQuestionIndex and call function to set next question 
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setQuestion()
 })
 
 /**
- * Hide Question before start, hide start button when pressed, then show question.
- * calls setQuestion function to show 1st question 
+ * Hide Place holder Question before start,  then show question.
+ * Set current score display to 0 at start 
+ * Set questionCounter to 0 at start
+ * Sort questions by index then randomise to pick question to show 
+ * Set currentQuestionIndex to 0 and call setQuestion() to setup first question
  */
 function startQuiz() {
-    // hides start button and shows question 
-    // endButton.classList.add('hide');
-    // restartButton.classList.add('hide')
     questionContainer.classList.remove('hide');
     currentScore.innerText = 0
     questionCounter = 0;
@@ -267,76 +266,90 @@ function startQuiz() {
     currentQuestionIndex = 0;
     // Call set question function pull in a question 
     setQuestion();
-    console.log('question shown');
-
-
 }
 
 /**
- * Sets up next question when next button is clicked 
+ * Sets up next question when next button is clicked.
+ * Resets state, shows random question, increments question counter,
+ * then displays current question position counter and increases progress bar.
  */
 function setQuestion() {
-    //  Resets everything to original state  when a new question is set
+    //  Resets everything to original state when a new question is set
     resetState()
-    //  calls showQuestion function to display a random question (andomQuestion) from the question array (currentQuestionIndex)
+    //  calls showQuestion function to display a random question (randomQuestion) from the question array (currentQuestionIndex)
     showQuestion(randomQuestion[currentQuestionIndex])
+    // Increment question counter 
     questionCounter++
-    console.log(questionCounter)
+    // display current question out of all possible questions 
     progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
+    // increase progress bar by applying style based on Question Counter divided by max questions to create a percentage
     progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
 }
 
 /**
- * Inserts question text from questions array into DOM 
+ * Inserts question text from questions array into DOM.
+ * creates abuttons for each answer, adds dataset correct to correct answers.
+ * sets event listener for click and asigns it value of selectAnswer 
+ * 
  */
 function showQuestion(question) {
     // Sets inner text of the question Div in the DOM to text from the question array
     questionElement.innerText = question.question;
     questionImage.innerHTML = question.img;
-    //  A loop for all possible answers 
+    //  A loop for all possible answers in array
     question.answers.forEach(answer => {
+        // assigns variable to an answer button to be created 
         const button = document.createElement('button')
+        // sets inner text of button to answer component from array
         button.innerText = answer.text
+        // Adds class to button 
         button.classList.add('choice-btn')
+        // in the answer is correct add data attribute correct 
         if (answer.correct) {
             button.dataset.correct = answer.correct
         }
+        // event listener for which answer is clicked 
         button.addEventListener('click', selectAnswer)
+        // adds button to DOM
         answerContainer.appendChild(button)
     });
 }
 
-
-
 /**
- * Carries out actions when answer is selected 
+ * Carries out actions when answer is selected.
+ * Increments correct answers if correct, 
  */
 function selectAnswer(e) {
+    // Sets variable to which button is selected
     const selectedButton = e.target
+    // sets variable based on if the data attribute is correct
     const correct = selectedButton.dataset.correct
+    // if the dataset is correct, increment correctAnswwer score, add text to show answer 
     if (correct) {
         correctAnswers++
         currentScore.innerText = correctAnswers
-        console.log(correctAnswers)
     }
+    // creates an array from children of answerContainer, then lopops through them and sets status based on if the answer was correct
     Array.from(answerContainer.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
+    // Checks if length of array is greater than question index +1, shows next button if true, else goes to end page
     if (randomQuestion.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide')
     } else {
-        // Stores score to an Item  
+        // Sets a local storage item mostRecenScores and assigns it the value of correct answers
         localStorage.setItem('mostRecentScore', correctAnswers)
         return window.location.assign('end.html')
         correctAnswers = 0
     }
 }
 
-
-
-
+/**
+ * Adds class based on whether data attribute is correct
+ */
 function setStatusClass(element, correct) {
     clearStatusClass(element);
+
     if (correct) {
         element.classList.add('correct')
     } else {
@@ -345,11 +358,17 @@ function setStatusClass(element, correct) {
 
 }
 
+/** 
+ * Removes class as part of reset
+ */
 function clearStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
 
+/**
+ * hides the next button, loops through children of answer button elements and removes it
+ */
 function resetState() {
     nextButton.classList.add('hide')
     while (answerContainer.firstChild) {
