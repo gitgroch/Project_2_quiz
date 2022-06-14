@@ -1,108 +1,236 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<!-- Insert Mobile responsiveness picture here -->
 
-Welcome gitgroch,
+# **Sci-Fi Movie Quiz**
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![screenshot of site from https://ui.dev/amiresponsive.](/assets/docs/screenshots/rm_amiresponsive.jpg)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
 
-## Gitpod Reminders
+## **Overview**
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+Sci-Fi moview quiz is a website for people to test their sci-fi movie knowledge. 
 
-`python3 -m http.server`
+The website can be accessed here: https://gitgroch.github.io/Project_2_quiz/
 
-A blue button should appear to click: _Make Public_,
+Target Audience:
 
-Another blue button should appear to click: _Open Browser_.
+- Fans of sci-fi movies 
+- Fans of movie quizes 
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+User Stories:
 
-A blue button should appear to click: _Make Public_,
+- As a fan of sci-fi movies I'd like a fun way to test my knowledge about them 
+- I'd like to see how I score against the quiz and benchmark my performance against other users. 
 
-Another blue button should appear to click: _Open Browser_.
+The purpose of the website is to provide the above target users with:
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- A place to test their movie knowledge 
+- A leaderboard to show off their score and compete against other users. 
 
-To log into the Heroku toolbelt CLI:
+The development Goals for the Website were to:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+-   Create a website that has a "Sci-Fi aesthetic" - ACHIEVED 
+-   Create amn easy to use Quiz to test the users knowledge - ACHIEVED
+-   Provide the user the option to save their score to a leaderboard - ACHIEVED 
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## **Planning** 
 
-------
+I discovered early on this project had many moving parts that became difficult to track, I decided to use Trello to track the tasks that I neeeded to complete
 
-## Release History
+![Screenshots of Trello board used for the project](/assets/docs/screenshots/rm_trello.jpg)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### **WireFraming** 
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+I used Balsamiq to roughly plan out some of the initial features and layout of the pages. Desktop and Mobile versions were wireframed side by side which helped me to decide early on how I wanted to approach responsiveness. On the whole, there are many parts of the final design that departs significantly from the wireframes, but the structure is similar.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+![Screenshots of initial wireframe designs made with balsamiq](/assets/docs/screenshots/rm_wireframe_1.jpg)
+![Screenshots of initial wireframe designs made with balsamiq](/assets/docs/screenshots/rm_wireframe_2.jpg)
+![Screenshots of initial wireframe designs made with balsamiq](/assets/docs/screenshots/rm_wireframe_3.jpg)
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+### **Color Schemes** 
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+I looked for a color scheme that would be consistent with a Sci-Fi movie poster or book cover. 
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+I used the tool [coolors.co](https://coolors.co) to generate several color schemes until I arrived at something that met my criteria: 
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+![screenshot of chosen color scheme](/assets/docs/screenshots/rm_coolors.jpg)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+### **Typography**
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+I looked for fonts that again would be consistent with a Sci-Fi movie poster or book cover. 
+**Fonts:**
+- For Headers: [Unica One](https://fonts.google.com/specimen/Unica+One?query=unica+one)
+- For Body text: [Comfortaa](https://fonts.google.com/specimen/Comfortaa?query=comfortaa)
+- Backup font: Sans Serif
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+The fonts are sourced from Google fonts.
 
-------
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+# Features
 
-**How will this affect me?**
+## **Home Page** 
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+- The homepage includes a hero section to draw the user in, an information section to inform the user of the sites purpose, and an explore section that describes the pages available to them on the site. 
+- The homepage is designed to be minimilist in order to not overwhelm the user with too much information and allow them to decide where theyt would like to go next in comfort.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+### **Hero Section**
+- The video background is meant to serve as a a wow factor for the user when they land on the page to draw them into the subject.
+- The video displays Fred Herzog and his work, which immediately gives the user an idea of what to expect.
+- The most important element of the hero section is the explore button, flex combined with media queries is used to ensure that the button remains visible as soon as the user lands, regardless of the screen size.
+- The explore button will bring the user to the Explore section of the webpage to allow them to continue to navigate through the website.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+![screenshot of the explore button visible when testting with iphone SE template in dev tools](/assets/docs/screenshots/explore_btn_iphoneSE.webp)
 
-**So….?**
+### **Explore section** 
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+- A static “Explore” section was created to anchor the Hero Button and bring the user to the relevant section of the site. 
+- The Main section consists of 3 cards that gives the user the choice of where to go next with information describing each section. 
+- The user can either click on the “Learn More” button or click on the image which has a hover effect applied to confirm that they can do so. 
+- Flex was used in this section to maintain responsiveness on all screen sizes
+- This may be an over abundance of navigation options, that clickable images is an expected behaviour, so I decided to keep it.
 
-**Can I opt out?**
+![screenshot of the explore section](/assets/docs/screenshots/explore_section.webp)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+#### **Bugs:** 
+- On some screen sizes the 3rd flex box will position below the other three and expand across the page. Everything remains fully functional, but the aesthetic is a bit strange. I believe this is just a consequence of using flex, is not app breaking, this will be a future fix.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+#### **Future Enhancements:**
+- Animations could be given to each card when they appear on screen to make them more appealing, either a fade in, or an expand effect
+- Fix layout at different screen sizes to avoid 3rd box stretching across screen.
 
-**Anything more?**
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+## **Biography Page** 
 
----
+![screenshot of text wrapping around image on the Biography page](/assets/docs/screenshots/biography_exmp.webp)
 
-Happy coding!
+- The biography page consists of 3 sections providing information about the life of fred herzog. 
+- Each section of text is paired with an image that is relevant to what the user has read. 
+
+#### **Bugs:** 
+- No current bugs 
+
+#### **Future Enhancements:**
+- The Biography page could be more interactive.
+- Making the images clickable to expand would provide a more satisfying user experience.
+- Adding external links to the text to provide more content would make the Biography page more interactive.
+
+## **Gallery Page** 
+
+- The gallery page allows the user to view a selection of work Herzog’s catalogue, and learn more about them. 
+- The images have a hover effect applied to confirm to the user that they can be clicked. 
+- Clicking the image will make it larger and show some text describing the image or more information about Herzog. This provides a high level of interactivity for the user and encourages them to spend more time in the gallery. 
+
+![screenshot of a lightbox used in the gallery page](/assets/docs/screenshots/gallery_lightbox.webp)
+
+#### **Bugs:** 
+- When expanded, the portrait cards allow for only limited amount of text before the layout is broken.
+    -  The feature currently works with the text included, this can be addressed in future updates if the text needs to be updated.
+    
+#### **Future Enhancements:**
+- Better arrangement of Images in the Gallery
+- Add an information section to give more context to the Gallery 
+
+## **Publication Page** 
+- The publication page allows the user to browsr the available publications featuring Fred Herzog and links to the page where they can be purchased by clicking the buttons on each card (opens in a new tab).
+
+![screenshot of a publication page section displaying a book of fred herzog's work](/assets/docs/screenshots/publication_page.jpg)
+
+#### **Bugs:**
+- None Identified
+#### **Future Enhancements:**
+- None planned at this time
+
+## **Contact Page** 
+
+- This page includes a simple contact form to allow users to submit questions to the website operators or to sign up for the newsletter
+    - Note: As we are working only on the front end, this is form does not "POST" any data, and instead redirects the user to a form submission page to mimic how it should work.
+- It also includes a call to action to use the form as well as some useful information which allows the user to click on links that bring them to the source of the video from the home page, as well as Herzog's official site at the Equinox Gallery. Both websites open in new tabs when clicked.
+
+![screenshot of the contact form and useful information page](/assets/docs/screenshots/contact_page.JPG)
+
+#### **Bugs:**
+- None Identified 
+#### **Future Enhancements:**  
+- The form page is functional but quite sparse, future iterations could add aditional style elements to make the page more attractive.
+
+## **Testing:**
+
+A seperate document has been created to detail Testing, Validation, Bugs and Fixes, which can be forund [here](/FIXLOG.md).
+
+- [FIXLOG](/FIXLOG.md)
+
+## **General Future Enhancement**
+
+- Add a page to the site to provide information about Exhibitions 
+    -   The page should have: Name, Address and Contact Details of the Gallery 
+    -   A description of works on Exhibition 
+    -   A map to locate the exhibition 
+- Replace the CSS "workaround" solutions for the mobile navigation hamburger menu with a JavaScript solution 
+- Replace the Gallery CSS Lightboxes with a more apropriate and better performing JavaScript solution 
+- Leverage variables with media queries to improve consistency and clarity.
+
+
+## **Deployment** 
+
+The site was deployed to GitHub pages. The steps to deploy are as follows:
+- In the GitHub repository, navigate to the Settings tab
+- From the source section drop-down menu, select the Master Branch
+- Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+
+The live link can be found here - https://gitgroch.github.io/fred-herzog/
+
+## **Credits, Acknowledgements and Notes on Development** 
+
+### **Development Notes**
+
+#### **Use of Variables** 
+
+- One of the most important things I learned during the development of the site, was CSS variables. It gave me the ability to define colors, font families, font sizes, font weights etc. at the beginning of the project and then call on them throughout the project. 
+- For example for each color chosen as part of the scheme, I created three shades that could be used for different purposes such as headers subheaders and body text.
+
+![screenshot of some of the css variables used in the project](/assets/docs/screenshots/variables.webp)
+
+- I feel that this enabled me to maintain a consistent theme throughout the project, and saved a huge amount of time. 
+- As development progressed I recognised times where I could have created more variables, and also have leveraged them with media queries to help maintain consistency. I will take this learning to future projects. 
+
+#### **Cube CSS** 
+
+- Like discovering variables, discovering that there were different methodologies in arranging CSS code was a bit of a revelation. I discovered the [CUBE (Composition Utility Block Exception) CSS](https://cube.fyi/) methodology about half way through development and tried to implement it into my workflow
+- While I didn’t implement everything from the process, it definitely helped with the remainder of my work, and will be something I will research more and implement for future projects. 
+
+#### **CSS Reset**
+
+- I found [Andy Web's CSS reset](https://piccalil.li/blog/a-modern-css-reset/) while researching CUBE CSS and I found it to be a very useful set of Universal defaults that I will continue to use for future projects
+
+### **Credits and Acknowledgements** 
+
+I made use of numerous tutorials and guides in the creation of this project. No code was taken verbatim from these tutorials, instead they were used to write code that adapted to my project. Special mention goes to [Kevin Powell's](https://www.youtube.com/kepowob) Youtube channel as he was a wealth of information which helped expand on what I learned in the course. 
+
+#### General Tutorials 
+
+- [CUBE CSS Methodology Guide by Andy Bell](https://cube.fyi/)
+- [CSS Clamp Tutorial by Andy Bell](https://piccalil.li/tutorial/fluid-typography-with-css-clamp/)
+- [Learn CSS Grid the easy way by Kevin Powell](https://youtu.be/rg7Fvvl3taU)
+- [Layouts with CSS Grid by Kevin Powell](https://youtu.be/S-5bGqNcNcU)
+- [CSS Variables - An introduction to CSS custom properties by Kevin Powell](https://youtu.be/PHO6TBq_auI)
+
+#### Utility Specific Tutorials
+
+- Applying Video as Background: [How to create a background video by Kevin Powell](https://youtu.be/RIDA6elhmBU)
+- Applying Video as Background: [Create a Website With Video Background | HTML & CS by Traversy Media](https://youtu.be/8MgpE2DTTKA)
+- Hover Effects and Before & After Use: [CSS Before and After pseudo elements explained by Kevin Powell](https://youtu.be/djbtPnNmc0I)
+- Navbar : [Create a responsive navigation nav with no JS! - By Kevin Powell](https://youtu.be/8QKOaTYvYUA)
+- Gallery Page Lightbox: [Create a CSS only lightbox! by Kevin Powell](https://youtu.be/6j5q-hP8sfk)
+- [A Modern CSS Reset by Andy Bell](https://piccalil.li/blog/a-modern-css-reset/)
+- [How to style forms with CSS by Supun Kavinda](https://blog.logrocket.com/how-to-style-forms-with-css-a-beginners-guide/)
+
+#### Media & Content
+- Background Video: [A Window Looking In: Fred Herzog by Imagine Create](https://vimeo.com/22104316)
+- Photographs used throughout [The Estate of Fred Herzog](https://www.equinoxgallery.com/our-artists/fred-herzog/)
+- Biography [Fred Herzog - Wikipedia](https://en.wikipedia.org/wiki/Fred_Herzog)
