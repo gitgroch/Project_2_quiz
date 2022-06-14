@@ -464,11 +464,6 @@ input::placeholder {
 }
 
 
-#high-scores-list ul {
-
-}
-
-
 @media (min-width: 768px) {
     .choice-btn {
         padding: .75rem 3rem;
