@@ -21,6 +21,7 @@ const progressBarFull = document.getElementById('progress-bar-full')
 // set score and question counter to 0 at beginning of quiz
 let correctAnswers = 0;
 let questionCounter = 0;
+let score = correctAnswers;
 
 // set maximum amount of questions 
 const MAX_QUESTIONS = 5;
@@ -167,6 +168,8 @@ function selectAnswer  (e) {
     if (randomQuestion.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide')
     } else {
+        localStorage.setItem('mostRecentScore', score)
+        console.log(score)
         return window.location.assign('end.html')
         correctAnswers = 0
     }
@@ -198,28 +201,31 @@ function resetState (){
 }
 
 // End Page JS 
-
+// Pulls username from text input 
 const username = document.getElementById('username')
-const saveScore = document.getElementById('save-score-btn')
+// identifies save score button
+const saveScoreBtn = document.getElementById('save-score-btn')
 const finalScore = document.getElementById('final-score')
-const mostRecentScore = document.getElementById('most-recent-score')
+// Pulls most recent score from 
+const mostRecentScore = localStorage.getItem('mostRecentScore')
 
 const highScores = JSON.parse(localStorage.getItem('highScores')) || []
 
 const MAX_HIGH_SCORES = 5 
 
 finalScore.innerText = mostRecentScore
+console.log(mostRecentScore)
 
-username.addEventListener('keyup', ()=> {
+username.addEventListener('keyup', () => {
     saveScoreBtn.disabled = !username.value 
 })
 
-function saveHighScore (e) {
+saveHighScore = e => {
     e.preventDefault()
-
+    
     const score = {
         score: mostRecentScore,
-        name: username.ariaValueMax
+        name: username.value
     }
 
     highScores.push(score)
@@ -233,3 +239,12 @@ function saveHighScore (e) {
     localStorage.setItem('highScores', JSON.stringify(highScores))
     window.location.assign('/')
 }
+
+// Highscores JS 
+
+const highScoresList = document.getElementById('high-scores-list')
+
+highScoresList.innerHTML = 
+highScores.map(score => {
+    return `<li class="high-score">${score.name} - ${score.score}</li>`
+}).join('')
