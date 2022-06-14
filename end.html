@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,38 +8,41 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>End of Quiz Page</title>
     <style>
-         @import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat&family=Unica+One&display=swap');
     </style>
 </head>
+
 <body>
     <div id="end" class="container">
         <div class="end-card flex-column flex-center">
-        <h1>Your Score</h1>
-        <h2 id="final-score"></h1>
-        <form class="end-form-container">
-            <h2>Enter your name below to save your score!</h2>
-            <input type="text" name="name" id="username" placeholder="Enter your name">
-            <button class="btn" id="save-score-btn" type="submit" onclick="saveHighScore(event)" disabled>Save</button>
-            <a href="highscores.html" class="btn" id="highscore-btn">High Scores</a>
-        </form>
-            <a href="quiz.html" class="btn">Try Again</a>
-            <a href="index.html" class="btn">Go Home</a>
-    </div>
+            <h1>Your Score</h1>
+            <h2 id="final-score">
+                </h1>
+                <form class="end-form-container">
+                    <h2>Enter your name below to save your score!</h2>
+                    <input type="text" name="name" id="username" placeholder="Enter your name">
+                    <!-- set onclick attribute for save button to trigger saveHighScore function -->
+                    <button class="btn" id="save-score-btn" type="submit" onclick="saveHighScore(event)"
+                        disabled>Save</button>
+                    <a href="highscores.html" class="btn" id="highscore-btn" aria-label="brings you to the high score leaderboard (opens in same tab)">High Scores</a>
+                </form>
+                <a href="quiz.html" class="btn" aria-label="restarts the quiz">Try Again</a>
+                <a href="index.html" class="btn" aria-label="brings you to the home page (opens in same tab)">Go Home</a>
+        </div>
     </div>
     <footer>
         <ul class="socials">
             <li>
-                <a href="https://github.com/gitgroch/" rel="noopener" aria-label="Visit my GitHub (opens in a new tab)"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/gitgroch/" rel="noopener"
+                    aria-label="Visit my GitHub (opens in a new tab)"><i class="fab fa-github"></i></a>
             </li>
         </ul>
     </footer>
+    <!-- link to all JS pages that interact with elements on page -->
     <script src="assets/js/end.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="https://kit.fontawesome.com/5564111e1e.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
-
-
-
-
