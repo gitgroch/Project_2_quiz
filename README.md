@@ -79,13 +79,18 @@ The fonts are sourced from Google fonts.
 
 ## **Testing:**
 
-A seperate document has been created to detail Testing, Validation, Bugs and Fixes, which can be forund [here](/FIXLOG.md).
+A seperate document has been created to detail Testing, Validation, Bugs and Fixes, which can be forund [here](/TESTLOG.md).
 
-- [FIXLOG](/FIXLOG.md)
+- [TESTLOG](/TESTLOG.md)
 
 ## **Future Enhancement**
 
-- 
+- Improve performance on mobile devices 
+- Add Multiple difficulty settings 
+- Add many more questions, but keep the max question count to 10. Cycle through the questions randomly to increase re-playability 
+- Add custom message based on score. 
+- Add functionality to share score 
+- Add persistant scoreboard (rather than local storage)
 
 ## **Deployment** 
 

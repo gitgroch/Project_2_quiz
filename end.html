@@ -21,14 +21,13 @@
     <div id="end" class="container">
         <div class="end-card flex-column flex-center">
             <h1>Your Score</h1>
-            <h2 id="final-score">
-                </h1>
+            <h2 id="final-score"></h2>
                 <form class="end-form-container">
                     <h2>Enter your name below to save your score!</h2>
                     <input type="text" name="name" id="username" placeholder="Enter your name">
                     <!-- set onclick attribute for save button to trigger saveHighScore function -->
                     <button class="btn" id="save-score-btn" type="submit" onclick="saveHighScore(event)"
-                        disabled>Save</button>
+                        disabled aria-label="Saves your score to the leaderboard">Save</button>
                     <a href="highscores.html" class="btn" id="highscore-btn" aria-label="brings you to the high score leaderboard (opens in same tab)">High Scores</a>
                 </form>
                 <a href="quiz.html" class="btn" aria-label="restarts the quiz">Try Again</a>
