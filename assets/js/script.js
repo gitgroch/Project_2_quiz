@@ -166,7 +166,7 @@ function selectAnswer  (e) {
     if (randomQuestion.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide')
     } else {
-        return window.location.assign('/end.html')
+        return window.location.assign('end.html')
         correctAnswers = 0
     }
     }
